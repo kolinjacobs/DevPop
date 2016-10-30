@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    <title></title>
+</head>
+
+<body>
+   <div id="top">
+    <div class="fourths" style="background-color:#ec155b;"></div>
+    <div class="fourths" style="background-color:#fc6701;"></div>
+    <div class="fourths" style="background-color:#0475b1;"></div>
+    <div class="fourths" style="background-color:#0ca47b;"></div>
+    </div> 
+    <a id="goBack" href="/">← back</a>
+    <h1 id="categoryHeader">{{framework.name}}</h1>
+    <p id="frameworkDesc">{{framework.description}}</p>
+    <div id="editDelete"><a href="/framework/{{framework.category}}/{{framework.name}}/{{framework.id}}/edit">Edit </a>
+        <span>|</span>
+        <a href="/framework/{{framework.category}}/{{framework.name}}/{{framework.id}}/delete"> Delete</a></div>
+    
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    <title></title>
+</head>
+
+<body>
+    <header>
+        <div id="fullPage">
+            <div id="menu">
+                <h1>D e v - P o p</h1>
+                <div id="circle">
+                    <a class="menuItem" href="/login"><img src="{{ url_for('static', filename='profileIcon.png') }}" width="100%"></a>
+                    <a class="menuItem" href="/new"><img src="{{ url_for('static', filename='plusIcon.png') }}" width="100%"></a>
+                    <a class="menuItem" href=""><img src="{{ url_for('static', filename='searchIcon.png') }}" width="100%"></a>
+                </div>
+
+            </div>
+            <h1 id="callout">Find new frameworks</h1>
+            <h2 id="calloutTwo">All Things Design and Development</h2>
+            <a id="seemore" href="">See More</a>
+        </div>
+    </header>
+     <section>
+    <div id="triangle"></div>
+        <h1 id="calloutTwo">Top New</h1>
+    <div id="categories">
+        <div class="category">
+        <a href="/framework/design"><h1>Design</h1></a>
+             <ul>
+                {% for f in frameworks %}
+                    {% if f.category == "design" %}
+                        <li><a href="/framework/{{f.category}}\{{f.name}}" >{{f.name}}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="category">
+         <a href="/framework/frontEnd"><h1>Front-end</h1></a>
+            <ul>
+                {% for f in frameworks %}
+                    {% if f.category == "frontEnd" %}
+                        <li><a href="/framework/{{f.category}}/{{f.name}}" >{{f.name}}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="category">
+         <a href="/framework/backEnd"><h1>back-end</h1></a>
+            <ul>
+                {% for f in frameworks %}
+                    {% if f.category == "backEnd" %}
+                        <li><a href="/framework/{{f.category}}\{{f.name}}" >{{f.name}}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="category">
+         <a href="/framework/dataBase"><h1>Data Base</h1></a>
+            <ul>
+                {% for f in frameworks %}
+                    {% if f.category == "dataBase" %}
+                        <li><a href="/framework/{{f.category}}\{{f.name}}" >{{f.name}}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="category">
+        <a href="/framework/IOS"><h1>IOS</h1></a>
+            <ul>
+                {% for f in frameworks %}
+                    {% if f.category == "IOS" %}
+                        <li><a href="/framework/{{f.category}}/{{f.name}}" >{{f.name}}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="category">
+         <a href="/framework/Andriod"><h1>Andriod</h1></a>
+             <ul>
+                {% for f in frameworks %}
+                    {% if f.category == "andriod" %}
+                        <li><a href="/framework/{{f.category}}\{{f.name}}" >{{f.name}}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    </section>
+</body>
+</html>

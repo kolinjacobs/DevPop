@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    <title></title>
+</head>
+
+<body>
+    <header>
+            <div id="menu">
+                <h1>D e v - P o p</h1>
+                <div id="circle">
+                    <a class="menuItem" href=""><img src="{{ url_for('static', filename='profileIcon.png') }}" width="100%"></a>
+                    <a class="menuItem" href=""><img src="{{ url_for('static', filename='plusIcon.png') }}" width="100%"></a>
+                    <a class="menuItem" href=""><img src="{{ url_for('static', filename='searchIcon.png') }}" width="100%"></a>
+                </div>
+            </div>
+    </header>
+    <div id="post">
+        <form method="post">
+            {% if framework != "" %}
+                <h1>Edit Framework</h1>
+            {% else %}
+                <h1>Add  a New Framework</h1>
+            {% endif %}
+
+            <input type="text" id="nameInput" placeholder="Framework Name" name="name" value="{{framework.name}}">
+            <textarea id="descriptionInput" placeholder="Description" name="description">{{framework.description}}</textarea>
+            <select name="framework" id="catogorieInput">
+                <option value="design">Design</option>
+                <option value="frontEnd">Front-end</option>
+                <option value="backEnd">Back-end</option>
+                <option value="dataBase">Data Base</option>
+                <option value="IOS">IOS</option>
+                <option value="android">Android</option>
+            </select>
+            <input type="submit" id="submit">
+        </form>
+    </div>
+</body>
+</html>
